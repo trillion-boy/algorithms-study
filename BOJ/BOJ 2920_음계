@@ -1,0 +1,22 @@
+nums = list(map(int, input().split()))
+for i in range(len(nums)-1):
+  if nums[i] < nums[i+1]:
+    print('ascending')
+  elif nums[i] > nums[i+1]:
+    print('descending')
+  else:
+    print('mixed')
+
+위와 같이 하면 print가 for문을 돌 때마다 반복되므로 이거는 X 
+
+대신에 
+
+nums = list(map(int, input().split()))
+if nums == sorted(nums):
+  print("ascending")
+elif nums == sorted(nums, reverse=True):
+  print("descending")
+else:
+  print("mixed")
+
+sorted를 활용해서 한번만 출력되게끔 만들기
